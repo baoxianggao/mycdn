@@ -1,17 +1,19 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.advertisement = factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('moment')) :
+  typeof define === 'function' && define.amd ? define(['moment'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.advertisement = factory(global.moment));
+}(this, (function (moment) { 'use strict';
+
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var moment__default = /*#__PURE__*/_interopDefaultLegacy(moment);
 
   //
-  //
-  //
-  //
-  //
-  //
   var script = {
-    name: 'advertisement'
+    name: 'advertisement',
+    methods: {
+      moment: moment__default['default']
+    }
   };
 
   function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -150,7 +152,9 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", [_vm._v("\n  测试单文件打包\n")])
+    return _c("div", [
+      _vm._v("\n  测试单文件打包\n  " + _vm._s(_vm.moment().format()) + "\n")
+    ])
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;
@@ -158,7 +162,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-f7f70646_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"index.vue"}, media: undefined });
+      inject("data-v-f9270dee_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"index.vue"}, media: undefined });
 
     };
     /* scoped */
